@@ -47,6 +47,7 @@ check_digit()
 
 
 def vender_identity():
+    global card_num2
     vendor_dict = {"34|37": "American Express", "62": "China UnionPay", "3528": "JCB",
                    "6304": "Laser", "6759": "Master UK", "50": "Maestro", "5019": "Dankort",
                    "4571": "Dankort Co-branded", "2200": "MIR", "2221": "Mastercard", "51": "Mastercard",
@@ -58,11 +59,14 @@ def vender_identity():
     else:
         print('enter a valid card number')
     print()
-    vendor_list = {"American Express":"34", "Master Card": "51", "Visa Debit": "1", " China UnionPay": "3528", " Switch": "4", " Solo": "4903"}
+    vendor_list = ["American Express", "Master Card", "Visa Debit", " China UnionPay", " Switch", " Solo"]
     print("Vendors are: ", vendor_list)
     select = input("select your vendor: ")
     if select in vendor_list:
-        print('your selection is :', vendor_list.get(select))
+        print ("your vendor card number is : ")
+        for i in range(9):
+            card_num2 = random.randint(1, 9)
+            print(card_num2)
     else:
         print("Enter a valid vendor")
 
